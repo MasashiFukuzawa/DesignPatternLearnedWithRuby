@@ -5,6 +5,5 @@ class Aggregate
   end
 
   def iterator
-    raise 'Abstract method is called.'
   end
 end

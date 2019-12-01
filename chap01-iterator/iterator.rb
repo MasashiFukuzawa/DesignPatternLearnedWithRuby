@@ -5,10 +5,8 @@ class Iterator
   end
 
   def has_next?
-    raise 'Abstract method is called.'
   end
 
   def next
-    raise 'Abstract method is called.'
   end
 end
