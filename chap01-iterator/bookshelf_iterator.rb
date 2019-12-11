@@ -5,11 +5,7 @@ class BookshelfIterator < Iterator
   end
 
   def has_next?
-    if @index < @books.length
-      true
-    else
-      false
-    end
+    @index < @books.length
   end
 
   def next
