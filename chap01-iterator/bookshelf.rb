@@ -1,12 +1,11 @@
 class Bookshelf < Aggregate
-  def initialize
-    @books = []
+  def initialize(maxsize)
+    @books = Array.new(maxsize)
     @last  = 0
-    puts @books
   end
 
   def append_book(book)
-    @books << book
+    @books[@last] = book
     @last += 1
   end
 
