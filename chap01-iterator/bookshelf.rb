@@ -1,6 +1,6 @@
 class Bookshelf < Aggregate
   def initialize
-    @books = Array.new
+    @books = []
     @last  = 0
     puts @books
   end
