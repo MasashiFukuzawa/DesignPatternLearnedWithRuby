@@ -1,7 +1,8 @@
 class Bookshelf < Aggregate
   def initialize
-    @books = []
+    @books = Array.new
     @last  = 0
+    puts @books
   end
 
   def append_book(book)
@@ -9,7 +10,15 @@ class Bookshelf < Aggregate
     @last += 1
   end
 
+  def getBookAt(index)
+    @books[index]
+  end
+
+  def getLength
+    @last
+  end
+
   def iterator
-    BookshelfIterator.new(@books)
+    BookshelfIterator.new(self)
   end
 end
