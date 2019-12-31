@@ -1,5 +1,3 @@
-require './hand'
-
 class WinningStrategy
   def initialize(seed)
     @won    = false

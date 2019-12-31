@@ -1,5 +1,3 @@
-require './hand'
-
 class ProbStrategy
   def initialize(seed)
     @prev_handvalue    = 0
