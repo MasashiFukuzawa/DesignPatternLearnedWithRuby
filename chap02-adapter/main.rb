@@ -1,4 +1,3 @@
-require './print'
 require './banner'
 require './print_banner'
 

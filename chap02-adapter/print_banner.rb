@@ -1,4 +1,4 @@
-class PrintBanner < Print
+class PrintBanner
   def initialize(string)
     @banner = Banner.new(string)
   end
