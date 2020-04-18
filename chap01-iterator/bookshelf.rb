@@ -1,6 +1,6 @@
-class Bookshelf < Aggregate
-  def initialize(maxsize)
-    @books = Array.new(maxsize)
+class Bookshelf
+  def initialize(initial_size = 0)
+    @books = Array.new(initial_size)
     @last  = 0
   end
 
@@ -9,11 +9,11 @@ class Bookshelf < Aggregate
     @last += 1
   end
 
-  def getBookAt(index)
+  def get_book_at(index)
     @books[index]
   end
 
-  def getLength
+  def get_length
     @last
   end
 

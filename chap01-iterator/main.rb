@@ -1,9 +1,7 @@
-require './aggregate'
-require './iterator'
 require './bookshelf'
 require './bookshelf_iterator'
 
-bookshelf = Bookshelf.new(4)
+bookshelf = Bookshelf.new
 bookshelf.append_book('1st book')
 bookshelf.append_book('2nd book')
 bookshelf.append_book('3rd book')

@@ -1,15 +1,15 @@
-class BookshelfIterator < Iterator
+class BookshelfIterator
   def initialize(bookshelf)
     @bookshelf = bookshelf
     @index = 0
   end
 
   def has_next?
-    @index < @bookshelf.getLength
+    @index < @bookshelf.get_length
   end
 
   def next
-    book = @bookshelf.getBookAt(@index)
+    book = @bookshelf.get_book_at(@index)
     @index += 1
     book
   end
