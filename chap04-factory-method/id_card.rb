@@ -1,12 +1,12 @@
-class IDCard < Product
+class IDCard
   attr_reader :owner
 
   def initialize(owner)
     @owner = owner
-    puts "#{@owner}のカードを作ります。"
+    puts "Create a card for #{@owner}."
   end
 
   def use
-    puts "#{@owner}のカードを使います。"
+    puts "Use #{@owner}'s card."
   end
 end

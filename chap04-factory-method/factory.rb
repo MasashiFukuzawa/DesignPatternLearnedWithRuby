@@ -1,13 +1,13 @@
 class Factory
   def create(owner)
-    product = createProduct(owner)
-    registerProduct(product)
+    product = create_product(owner)
+    register_product(product)
     product
   end
 
-  def createProduct(owner)
+  def create_product(owner)
   end
 
-  def registerProduct(product)
+  def register_product(product)
   end
 end

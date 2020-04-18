@@ -5,11 +5,11 @@ class IDCardFactory < Factory
     @owners = []
   end
 
-  def createProduct(owner)
+  def create_product(owner)
     IDCard.new(owner)
   end
 
-  def registerProduct(product)
+  def register_product(product)
     @owners << product.owner
   end
 end
