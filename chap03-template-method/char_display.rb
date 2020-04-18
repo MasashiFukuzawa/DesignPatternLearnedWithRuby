@@ -3,15 +3,17 @@ class CharDisplay < AbstractDisplay
     @ch = ch
   end
 
-  def open
-    '<<'
-  end
+  private
 
-  def print_letter
-    @ch
-  end
+    def open
+      '<<'
+    end
 
-  def close
-    '>>'
-  end
+    def print_letter
+      @ch
+    end
+
+    def close
+      '>>'
+    end
 end

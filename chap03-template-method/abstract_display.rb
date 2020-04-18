@@ -1,13 +1,4 @@
 class AbstractDisplay
-  def open
-  end
-
-  def print_letter
-  end
-
-  def close
-  end
-
   def display
     print open
     5.times do
@@ -15,4 +6,15 @@ class AbstractDisplay
     end
     puts close
   end
+
+  private
+
+    def open
+    end
+
+    def print_letter
+    end
+
+    def close
+    end
 end

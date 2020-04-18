@@ -4,19 +4,21 @@ class StringDisplay < AbstractDisplay
     @width  = string.bytesize
   end
 
-  def open
-    print_line
-  end
+  private
 
-  def print_letter
-    puts "|#{@string}|"
-  end
+    def open
+      print_line
+    end
 
-  def close
-    print_line
-  end
+    def print_letter
+      puts "|#{@string}|"
+    end
 
-  def print_line
-    puts "+#{'-' * @width}+"
-  end
+    def close
+      print_line
+    end
+
+    def print_line
+      puts "+#{'-' * @width}+"
+    end
 end
