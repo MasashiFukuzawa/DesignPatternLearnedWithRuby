@@ -1,10 +1,9 @@
 class Singleton
   def initialize
-    @instance = Singleton.new
-    puts 'インスタンスを生成しました。'
+    puts 'Created an instance.'
   end
 
   def self.instance
-    @instance
+    @instance ||= Singleton.new
   end
 end
