@@ -1,11 +1,11 @@
 class WinningStrategy
   def initialize(seed)
-    @won    = false
+    @won = false
     @random = Random.new(seed)
   end
 
   def next_hand
-    Hand.get_hand(@random.rand(0..2))
+    Hand.hand(@random.rand(0..2))
   end
 
   def study(win_bool)

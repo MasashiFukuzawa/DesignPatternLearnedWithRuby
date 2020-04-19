@@ -2,9 +2,9 @@ class Player
   attr_reader :name
 
   def initialize(name, strategy)
-    @name      = name
-    @strategy  = strategy
-    @wincount  = 0
+    @name = name
+    @strategy = strategy
+    @wincount = 0
     @losecount = 0
     @gamecount = 0
   end
@@ -15,7 +15,7 @@ class Player
 
   def win
     @strategy.study(true)
-    @wincount  += 1
+    @wincount += 1
     @gamecount += 1
   end
 
@@ -30,6 +30,6 @@ class Player
   end
 
   def to_string
-    "[#{@name}: #{@gamecount} games, #{@wincount} win, #{@losecount} lose]"
+    "[#{name}: #{@gamecount} games, #{@wincount} win, #{@losecount} lose]"
   end
 end

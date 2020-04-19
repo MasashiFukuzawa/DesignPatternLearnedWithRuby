@@ -1,5 +1,4 @@
 require './hand'
-require './strategy'
 require './winning_strategy'
 require './prob_strategy'
 require './player'

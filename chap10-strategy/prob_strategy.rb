@@ -1,13 +1,13 @@
 class ProbStrategy
   def initialize(seed)
-    @prev_handvalue    = 0
+    @prev_handvalue = 0
     @current_handvalue = 0
-    @history           = [[1, 1, 1], [1, 1, 1], [1, 1, 1]]
-    @random            = Random.new(seed)
+    @history = [[1, 1, 1], [1, 1, 1], [1, 1, 1]]
+    @random = Random.new(seed)
   end
 
   def next_hand
-    bet = @random.rand(get_sum(@current_handvalue))
+    bet = @random.rand(sum(@current_handvalue))
 
     if bet < @history[@current_handvalue][0] + @history[@current_handvalue][1]
       handvalue = 0
@@ -19,7 +19,7 @@ class ProbStrategy
 
     @prev_handvalue    = @current_handvalue
     @current_handvalue = handvalue
-    Hand.get_hand(handvalue)
+    Hand.hand(handvalue)
   end
 
   def study(win_bool)
@@ -30,7 +30,7 @@ class ProbStrategy
     end
   end
 
-  def get_sum(hv)
+  def sum(hv)
     sum = 0
     3.times do |i|
       sum += @history[hv][i]

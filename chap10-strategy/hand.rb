@@ -21,18 +21,18 @@ class Hand
     if (self == h)
       0
     elsif (h.handvalue + 1) % 3 == handvalue
-       1
+      1
     else
       -1
     end
   end
 
-  def get_name
-    name[@handvalue]
+  def name
+    name[handvalue]
   end
 
   class << self
-    def hand
+    def hands
       [Hand.new(HAND_VALUE_GUU), Hand.new(HAND_VALUE_CHO), Hand.new(HAND_VALUE_PAA)]
     end
 
@@ -40,8 +40,8 @@ class Hand
       ['グー', 'チョキ', 'パー']
     end
 
-    def get_hand(handvalue)
-      hand[handvalue]
+    def hand(handvalue)
+      hands[handvalue]
     end
   end
 end
