@@ -1,6 +1,4 @@
 class StringDisplayImpl
-  attr_reader :string, :width
-
   def initialize(string)
     @string = string
     @width = string.bytes.length
@@ -11,7 +9,7 @@ class StringDisplayImpl
   end
 
   def raw_print
-    puts "|#{string}|"
+    puts "|#{@string}|"
   end
 
   def raw_close
@@ -20,7 +18,7 @@ class StringDisplayImpl
 
   def print_line
     print "+"
-    width.times do |i|
+    @width.times do |i|
       print "-"
     end
     puts "+"

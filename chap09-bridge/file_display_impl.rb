@@ -1,12 +1,10 @@
 class FileDisplayImpl
-  attr_reader :filename, :file
-
   def initialize(filename)
     @filename = filename
   end
 
   def raw_open
-    @file = File.new(filename, 'r')
+    @file = File.new(@filename, 'r')
   end
 
   def raw_print
