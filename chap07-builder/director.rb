@@ -1,6 +1,4 @@
 class Director
-  attr_reader :builder
-
   def initialize(builder)
     @builder = builder
   end
