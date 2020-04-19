@@ -1,6 +1,4 @@
 class IDCard
-  attr_reader :owner
-
   def initialize(owner)
     @owner = owner
     puts "Create a card for #{@owner}."
