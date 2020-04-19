@@ -1,15 +1,13 @@
-class Directory < Entry
-  def initialize(name)
-    super(name)
+require './entry'
+
+class SampleDirectory < Entry
+  def initialize(name, size = 0)
+    super(name, size)
     @entries = []
   end
 
-  def get_size
-    size = 0
-    @entries.each do |entry|
-      size += entry.size
-    end
-    size
+  def size
+    @entries.each { |e| self.size += e.size }
   end
 
   def add(entry)
@@ -17,7 +15,7 @@ class Directory < Entry
     @entries
   end
 
-  def print_list(prefix)
+  def print_list(prefix = "")
     puts "#{prefix}/#{self.to_string}"
     @entries.each do |entry|
       puts "#{prefix}/#{entry.name}"
