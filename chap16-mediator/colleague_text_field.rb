@@ -1,39 +1,21 @@
-class TextField
-  attr_accessor :text
+class ColleagueTextField
+  attr_accessor :text, :state
 
-  def initialize(text, columns)
+  def initialize(text)
     @text = text
-    @columns = columns
+    @state = nil
   end
 
-  def background(color)
-    color
+  def mediator=(mediator)
+    @mediator = mediator
   end
 
-  class ColleagueTextField < TextField
-    def mediator=(mediator)
-      @mediator = mediator
-    end
-
-    def colleague_enabled?(enabled)
-      !enabled
-      background(!enabled ? Color.white : Color.light_gray)
-    end
-
-    def text_value_changed(e)
-      @mediator.colleague_changed
-    end
+  def set_colleague_enabled(enabled)
+    @state = enabled
   end
-end
 
-class Color
-  class << self
-    def white
-      'white'
-    end
-
-    def light_gray
-      'light_gray'
-    end
+  def text_value_changed(text)
+    @text = text
+    @mediator.colleague_changed
   end
 end

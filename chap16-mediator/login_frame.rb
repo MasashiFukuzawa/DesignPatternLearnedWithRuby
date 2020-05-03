@@ -11,12 +11,12 @@ class LoginFrame
   end
 
   def create_colleagues
-    @check_guest = Checkbox::ColleagueCheckbox.new('Guest', true)
-    @check_login = Checkbox::ColleagueCheckbox.new('Guest', false)
-    @text_user = TextField::ColleagueTextField.new('', 10)
-    @text_pass = TextField::ColleagueTextField.new('', 10)
-    @button_ok = Button::ColleagueButton.new('OK')
-    @button_cancel = Button::ColleagueButton.new('Cancel')
+    @check_guest = ColleagueCheckbox.new('Guest', true)
+    @check_login = ColleagueCheckbox.new('Guest', false)
+    @text_user = ColleagueTextField.new('')
+    @text_pass = ColleagueTextField.new('')
+    @button_ok = ColleagueButton.new('OK')
+    @button_cancel = ColleagueButton.new('Cancel')
 
     @check_guest.mediator = self
     @check_login.mediator = self
@@ -28,32 +28,28 @@ class LoginFrame
 
   def colleague_changed
     if @check_guest.state
-      @text_user.colleague_enabled?(false)
-      @text_pass.colleague_enabled?(false)
-      @button_ok.colleague_enabled?(true)
+      @text_user.set_colleague_enabled(false)
+      @text_pass.set_colleague_enabled(false)
+      @button_ok.set_colleague_enabled(true)
     else
-      @text_user.colleague_enabled?(true)
+      @text_user.set_colleague_enabled(true)
       user_pass_changed
     end
-  end
-
-  def action_performed(e)
-    puts e.to_s
   end
 
   private
 
     def user_pass_changed
       if @text_user.text.length > 0
-        @text_pass.colleague_enabled?(true)
+        @text_pass.set_colleague_enabled(true)
         if @text_pass.text.length > 0
-          @button_ok.colleague_enabled?(true)
+          @button_ok.set_colleague_enabled(true)
         else
-          @button_ok.colleague_enabled?(false)
+          @button_ok.set_colleague_enabled(false)
         end
       else
-        @text_pass.colleague_enabled?(false)
-        @button_ok.colleague_enabled?(false)
+        @text_pass.set_colleague_enabled(false)
+        @button_ok.set_colleague_enabled(false)
       end
     end
 end
