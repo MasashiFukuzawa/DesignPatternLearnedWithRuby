@@ -10,7 +10,7 @@ class Bookshelf
   end
 
   def get_book_at(index)
-    @books[index]
+    @books[index].name
   end
 
   def get_length
